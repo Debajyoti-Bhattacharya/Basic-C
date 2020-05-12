@@ -1,0 +1,23 @@
+Input:
+#include <stdio.h>
+ int main()
+{
+    int N; 
+    scanf("%d",&N); 
+int temp, count; 
+count=0;
+    temp=N;
+    while(temp>0)
+	{
+        count++;
+        temp/=10;
+    }
+     printf("The number %d contains %d digits.",N,count);
+     return 0;
+}
+Output:
+570
+The number 570 contains 3 digits.
+
+934521
+The number 934521 contains 6 digits
