@@ -1,0 +1,51 @@
+Input:(1)
+#include <stdio.h>
+int main()
+{
+   int x, y, GCD; 
+   scanf("%d %d", &x, &y); //Two numbers x and y are taken from the test cases
+   //You can use any other variable as required 
+   //The last part is already written 
+
+
+for (int i=1; i<=x && i<=y;++i)
+  if(x%i==0 && y%i==0)
+  GCD=i;
+printf("GCD of the numbers %d and %d is %d", x, y,GCD);
+
+	 return 0;
+}
+Input:(2)
+#include <stdio.h>
+int main()
+{
+   int x, y, GCD; 
+   scanf("%d %d", &x, &y); //Two numbers x and y are taken from the test cases
+   //You can use any other variable as required 
+   //The last part is already written 
+
+
+int z;
+   if (x<y)
+     z=x;
+    else 
+      z=y;
+  
+        for(GCD = z; GCD >= 1; GCD--) 
+    {
+        // GCD is the greatest number that divides both the numbers
+        if(x%GCD == 0 && y%GCD == 0) 
+            break;  // exits the loop
+    }
+printf("GCD of the numbers %d and %d is %d", x, y,GCD);
+
+	 return 0;
+}
+
+Output:
+46 9
+GCD of the numbers 46 and 9 is 1
+
+15 75
+GCD of the numbers 15 and 75 is 15
+
