@@ -1,0 +1,62 @@
+Input :
+#include <stdio.h>
+#include <stdlib.h>
+void reverse_array(int*, int);
+
+int main()
+{
+   int n, i, *pointer;
+
+   scanf("%d",&n);
+
+   pointer = (int*)malloc(sizeof(int)*n);
+
+   if( pointer == NULL )
+      exit(EXIT_FAILURE);
+
+   for ( i = 0 ; i < n ; i++ )
+      scanf("%d",(pointer+i));
+
+   reverse_array(pointer, n);
+
+
+   for ( i = 0 ; i < n ; i++ )
+      printf("%d\n",*(pointer+i));
+
+   free(pointer);
+
+   return 0;
+}
+
+void reverse_array(int *pointer, int n)
+{
+   int *s, c, d;
+
+   s = (int*)malloc(sizeof(int)*n);
+
+   if( s == NULL )
+      exit(EXIT_FAILURE);
+
+   for ( c = n - 1, d = 0 ; c >= 0 ; c--, d++ )
+      *(s+d) = *(pointer+c);
+
+   for ( c = 0 ; c < n ; c++ )
+      *(pointer+c) = *(s+c);
+
+   free(s);
+}
+
+Output :
+
+5
+0
+1
+2
+3
+4
+
+4
+3
+2
+1
+0
